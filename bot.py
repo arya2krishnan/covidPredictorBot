@@ -1,5 +1,5 @@
 import discord
-from CovidPredictorBot import newcovidpredictor
+import newcovidpredictor
 
 client = discord.Client()
 
@@ -11,12 +11,13 @@ async def on_ready():
 async def on_message(message):
     if message.author == client.user:
         return
-    end, tomorrow, diff, pending, hospital, total = newcovidpredictor.predictor()
+    end, tomorrow, new_tot, diff, pending, hospital, total = newcovidpredictor.predictor()
 
     if message.content.startswith('$covidpred'):
         embed = discord.Embed(title='COVID Predictor',
                               description='Hello. Thank you for running the COVID-19 Predictor. \n\n'
-                                   'We predict there will be ' + str(tomorrow) + ' total cases tomorrow. \n\n'
+                                   'We predict there will be ' + str(tomorrow) + ' new cases tomorrow and ' + str(new_tot) + ' '
+                                    'total cases tomorrow. \n\n'
                                     'Today there are ' + str(pending) + ' pending cases yet to be deemed positive/negative. \n\n'
                                     'There are currently ' + str(hospital) + ' hospitalized COVID-19 patients. \n\n'
                                     'There were ' + str(total) + ' total cases today. \n\n'
