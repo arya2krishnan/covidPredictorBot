@@ -79,7 +79,7 @@ def predictor():
 
 
 
-    return round(-final_predict), round(result_mean, 0), \
+    return round(-final_predict), round(result_mean), round(result_mean + df['positive'][0]), \
            train_dataset['positiveIncreaseDifference'][0], train_dataset['pending'][0], \
            train_dataset['hospitalizedIncrease'][0], df['positive'][0]
 
