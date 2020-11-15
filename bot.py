@@ -24,4 +24,4 @@ async def on_message(message):
                                     'Thank you come back tomorrow for a new prediction.')
         await message.channel.send(embed=embed)
 
-client.run('Nzc3NDAyMjY0MzM0NzYyMDE1.X7C6Rw.6ht6w9JGhf6l4QwJ67qWzBSYLN0')
+client.run('Your Token Here')
